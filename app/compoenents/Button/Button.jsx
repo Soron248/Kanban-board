@@ -9,9 +9,15 @@ const Button = ({ pulltask }) => {
   const [priority, setPriority] = useState("");
   const [description, setDescription] = useState("");
 
+  function generateUniqueId() {
+    return "_" + Math.random().toString(36).substr(2, 9);
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    const taskId = generateUniqueId();
     const taskData = {
+      id: taskId,
       title,
       priority,
       description,

@@ -2,9 +2,10 @@
 import { useState } from "react";
 import BoardHead from "./compoenents/BoardHead/BoardHead";
 import Button from "./compoenents/Button/Button";
+import data from "@/app/utils/data.json";
 
 export default function Home() {
-  const [task, setTask] = useState([]);
+  const [task, setTask] = useState(data);
 
   const pulltask = (taskData) => {
     setTask((prevTask) => [...prevTask, taskData]);
